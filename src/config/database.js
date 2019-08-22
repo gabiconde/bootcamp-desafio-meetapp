@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   database: 'meetapp',
   username: 'postgres',
   password: 'docker',
