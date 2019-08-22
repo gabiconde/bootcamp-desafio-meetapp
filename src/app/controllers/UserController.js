@@ -29,7 +29,8 @@ class UserController {
     })
   }
 
-  async update(){
+  async update(req, res){
+    return res.json({ msg: 'auth done'})
 
   }
 }
