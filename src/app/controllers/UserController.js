@@ -57,6 +57,7 @@ class UserController {
         .when('password', (password, field) =>
           password ? field.required().oneOf([Yup.ref('password')]) : field
         ),
+      avatar_id: Yup.number(),
     });
 
     if (!(await schema.isValid(req.body))) {
@@ -85,12 +86,13 @@ class UserController {
         error: 'Password does not match',
       });
     }
-    const { id, name, provider } = await user.update(req.body);
+    console.log(user);
+    const { id, name, speaker } = await user.update(req.body);
     return res.json({
       id,
       name,
       email,
-      provider,
+      speaker,
     });
   }
 }
